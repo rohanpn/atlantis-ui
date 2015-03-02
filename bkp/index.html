@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<title>Atlantis</title>
+		<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+		<script src="js/semantic.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src ="js/angular.js"></script>
+		<script type="text/javascript" src = "ngapp/controllers/homeController.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.7.0/semantic.min.css">
+	</head>
+
+	<body  ng-app="myApp" ng-controller="DemoController" >
+	<!-- menu -->
+		<div class="ui page grid">
+    	<div class="computer tablet only row">
+	      <div class="ui inverted menu navbar">
+	        <a href="" class="brand item">Atlantis UI</a>
+	        <a href="" class="item">Release Wizard</a>
+	        <a href="" class="item">Deploy</a>
+	        <a href="" class="item">Manage</a>
+	        <a href="" class="item">User Administration</a>
+	        <a href="" class="item">Logout</a>
+	      </div>
+    	</div>
+	  </div>
+
+	  <!-- Environment Configuration And Management -->
+	    <div class="row">
+	      <div class="column" style="padding-left:40px;padding-right:100px;padding-top:30px;padding-bottom:30px">
+	        <div class="ui large message">
+	          <h5 class="ui huge header">Environment Configuration And Management</h5>
+	        </div>
+	      </div>
+	    </div>
+
+	    <!-- Application, register dependency and delete environment -->
+	<div class="ui grid">
+		<!-- Application DropDown  -->
+	  <!-- column 1 -->
+	  <div class="four wide column">
+	  	<div class="ui compact selection dropdown">
+				  <i class="dropdown icon"></i>
+				  <div class="text">Application</div>
+				  <div class="menu">
+				  	<div ng-repeat="ap in App">
+				    	<div class="item" ng-click="show(ap)">{{ap.Name}}</div>
+				  	</div>
+				  </div>
+			</div>
+	  </div>
+
+	  <!-- attributes of Application -->
+	  <!-- column 2 -->
+	  <div class="four wide column">
+	  		<h3>{{"Appname : "}}</h3> {{selectedApp.Name}}
+	  		<h3>{{"CPU_Shares : "}}</h3> {{selectedApp.CPU_Shares}}
+	  		<h3> {{"Memory : "}}</h3> {{selectedApp.Memory}}
+	  		<h3>{{"Containers : "}}</h3>  {{selectedApp.Container}}
+				<h3>{{"Dependencies : "}}</h3>
+				<div ng-repeat="dep in selectedApp.Dependencies">
+			  	 <div class="item" ng-click="display(dep)">{{dep}}</div>
+				</div>
+	  </div>
+
+	  <!-- Register Dependencies -->
+		<!-- column 3 -->
+	  <div class="four wide column">
+	 	 <div class="ui right floated button" style="margin-left:55px">Register Dependencies</div>
+	  </div>
+
+	  <!-- Delete Environment -->
+		<!-- column 4 -->
+	  <div class="four wide column">
+			<div class="ui right floated button" style="margin-right:45px">Delete Environment</div>
+	  </div>
+	</div>
+
+<!-- <div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Profile Picture
+  </div>
+  <div class="content">
+    <div class="description">
+      <div class="ui header">Environment</div>
+      <p>Application Name</p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+ -->
+		<!-- for dropdown selection -->
+		<script>
+			onload = function(){
+				$('.ui.dropdown').dropdown();
+			};
+		</script>
+ </body>
+</html>

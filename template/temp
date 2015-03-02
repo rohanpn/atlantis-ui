@@ -1,0 +1,40 @@
+<!-- drop down for application -->
+	 <!-- <div class="ui page grid"> -->
+	 	<div class="row">
+			<div class="ui compact selection dropdown" >
+			  <i class="dropdown icon"></i>
+			  <div class="text">Application</div>
+			  <div class="menu">
+			  	<div ng-repeat="ap in App">
+			    	<div class="item" ng-click="show(ap)">{{ap.Name}}</div>
+			  	</div>
+			  </div>
+			</div>
+		<div class="ui right floated button" style="margin-right:25px">Register Dependencies</div>
+		<div class="ui right floated button">Delete Environment</div>
+
+		<div ng-repeat="dep in Dependencies">
+		   <div class="item" ng-click="display(dep)">{{dep}}</div>
+		</div>
+
+<!-- 		  Button for Register Dependencies & Delete Environment -->
+
+		</div>
+
+
+<!-- drop down for Environment -->
+
+<!-- Drop down for environment -->
+	<!-- <div class= "row">
+		<div class="ui compact selection dropdown">
+		  <i class="dropdown icon"></i>
+		  <div class="text">Environment</div>
+		  <div class="menu">
+		  	<div ng-repeat="en in Env">
+		  	  <div class="item" ng-click="display(en)">{{en.Name}}</div>
+		  	</div>
+		  </div>
+		</div>
+		<div ng-repeat="hobby in Hobbies">{{hobby}}</div>
+	</div>
+ -->

@@ -1,0 +1,34 @@
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Profile Picture
+  </div>
+  <div class="content">
+    <div class="description">
+      <div class="ui header">Environment</div>
+      <p>Application Name</p>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black button">
+      Nope
+    </div>
+    <div class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+
+
+$scope.runQuestion = function(question){
+		$scope.runParamsModal = $modal({title: "Enter Parameters Value",show: true, scope:$scope,
+			   html:true,contentTemplate:"scripts/ngapp/tmplts/question/runParams.html"});
+
+	};
+
+
+
+<li><a href="" data-ng-click="runQuestion(question);">
+	<img data-ng-src="{{SETTINGS.STATIC_URL}}images/table_option_2.png" alt="">RUN</a>
+</li>
